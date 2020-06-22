@@ -18,6 +18,14 @@ const rules = [
     test: /\.html$/,
     loader: 'html-loader',
   },
+  {
+    test: /\.mp4$/i,
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  },
 ]
 module.exports = {
   entry: path.join(__dirname, 'src', 'index.js'),

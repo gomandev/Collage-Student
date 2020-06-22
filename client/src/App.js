@@ -1,15 +1,21 @@
-import React, { PureComponent } from 'react'
-
+import React, { Suspense, lazy } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+const Home = lazy(e => import('./views/home/Home'))
+import Spinner from './components/utils/spinner/Spinner'
 import './App.css'
 
-class App extends PureComponent {
-  render() {
-    return (
-      <>
-        <h1>Hello Plate</h1>
-      </>
-    )
-  }
+const App = () => {
+  return (
+    <>
+      <Suspense fallback={<Spinner />}>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+          </Switch>
+        </Router>
+      </Suspense>
+    </>
+  )
 }
 
 export default App
