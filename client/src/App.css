@@ -1,4 +1,6 @@
-/*!
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
+/*
  * Bootstrap v4.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -65,11 +67,59 @@ section {
   display: block;
 }
 
+.wrapper {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  color: #fff;
+  overflow: hidden;
+}
+
+.header-content {
+  z-index: 10;
+  width: 500px;
+}
+
+.video-container > video {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #303030 url(./assets/cover.png) no-repeat center center/cover;
+  box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;
+}
+
+.video-container:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.73;
+  background: #101010;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -10560,6 +10610,9 @@ h5,
 .wrap .top-wrap .text span {
   display: block;
 }
+.grad {
+  color: linear-gradient(90deg, rgba(100, 181, 246, 1) 0%, rgba(33, 150, 243, 1) 35%, rgba(25, 118, 210, 1) 100%) ;
+}
 .wrap .top-wrap .text span:first-child {
   text-transform: uppercase;
   font-size: 13px;
@@ -10571,7 +10624,7 @@ h5,
 
 .ftco-navbar-light {
   background: #2d3e50 !important;
-  z-index: 3;
+  z-index: 10;
   padding: 0;
 }
 @media (max-width: 991.98px) {

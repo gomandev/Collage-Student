@@ -19,7 +19,7 @@ const rules = [
     loader: 'html-loader',
   },
   {
-    test: /\.mp4$/i,
+    test: /\.(mp4|png)$/i,
     use: [
       {
         loader: 'file-loader',
